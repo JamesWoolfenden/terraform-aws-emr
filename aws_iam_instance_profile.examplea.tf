@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "examplea" {
-  name = "emr_profile"
-  role = aws_iam_role.emr_instance.name
+  name_prefix = "emr_profile"
+  role        = aws_iam_role.emr_instance.name
 }
 
 # IAM Role for EC2 Instance Profile

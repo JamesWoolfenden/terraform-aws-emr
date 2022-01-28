@@ -12,8 +12,3 @@ resource "aws_emr_cluster" "cluster" {
 
   service_role = aws_iam_role.emr_service.arn
 }
-
-
-
-
-
