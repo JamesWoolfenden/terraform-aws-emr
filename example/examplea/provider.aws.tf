@@ -1,5 +1,6 @@
 provider "aws" {
-  region = "eu-west-1"
+  region  = "eu-west-2"
+  profile = "personal"
   default_tags {
     tags = {
       createdby = "Terraform"
