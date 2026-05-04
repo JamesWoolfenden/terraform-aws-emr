@@ -115,9 +115,28 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": [
+                "elasticmapreduce:CreateSecurityConfiguration",
+                "elasticmapreduce:DeleteSecurityConfiguration",
+                "elasticmapreduce:DescribeCluster",
+                "elasticmapreduce:DescribeSecurityConfiguration",
+                "elasticmapreduce:GetAutoTerminationPolicy",
+                "elasticmapreduce:ListBootstrapActions",
+                "elasticmapreduce:ListSteps",
+                "elasticmapreduce:RunJobFlow",
+                "elasticmapreduce:TerminateJobFlows"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
                 "iam:AddRoleToInstanceProfile",
                 "iam:CreateInstanceProfile",
                 "iam:CreateRole",
+                "iam:CreateServiceLinkedRole",
                 "iam:DeleteInstanceProfile",
                 "iam:DeleteRole",
                 "iam:DeleteRolePolicy",
@@ -136,7 +155,7 @@ resource "aws_iam_policy" "terraform_pike" {
             ]
         },
         {
-            "Sid": "VisualEditor2",
+            "Sid": "VisualEditor3",
             "Effect": "Allow",
             "Action": [
                 "kms:CreateKey",
