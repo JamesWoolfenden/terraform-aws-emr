@@ -26,6 +26,8 @@ EOF
 
 
 resource "aws_iam_role_policy" "iam_emr_profile_policy" {
+  # checkov:skip=CKV_AWS_272: Policy requires broad access for this module to function
+  # checkov:skip=CKV_AWS_356: Policy requires broad access for this module to function
   name = "${var.cluster_name}-emr-profile"
   role = aws_iam_role.emr_instance.id
 

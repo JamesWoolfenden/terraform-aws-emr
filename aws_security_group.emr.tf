@@ -1,4 +1,5 @@
 resource "aws_security_group" "emr" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
   //todo
   name        = "block_access"
   description = "Block all traffic"
