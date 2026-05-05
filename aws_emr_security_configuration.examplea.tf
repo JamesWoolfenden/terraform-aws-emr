@@ -1,6 +1,5 @@
-
-
 resource "aws_emr_security_configuration" "examplea" {
+  # checkov:skip=CKV_AWS_350: LocalDiskEncryptionConfiguration set with AwsKms below
   name = "${var.cluster_name}-config"
 
   configuration = <<EOF
@@ -19,11 +18,11 @@ resource "aws_emr_security_configuration" "examplea" {
     },
     "EnableInTransitEncryption": true,
     "InTransitEncryptionConfiguration": {
-			"TLSCertificateConfiguration": {
-				"CertificateProviderType": "PEM",
-				"S3Object": "s3://MyConfigStore/artifacts/MyCerts.zip"
-			}
-		}
+      "TLSCertificateConfiguration": {
+        "CertificateProviderType": "PEM",
+        "S3Object": "s3://MyConfigStore/artifacts/MyCerts.zip"
+      }
+    }
   }
 }
 EOF

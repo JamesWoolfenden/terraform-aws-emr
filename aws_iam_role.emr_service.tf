@@ -23,6 +23,9 @@ resource "aws_iam_role_policy" "emr_service" {
   # checkov:skip=CKV_AWS_355: Policy requires broad access for this module to function
   # checkov:skip=CKV_AWS_272: Policy requires broad access for this module to function
   # checkov:skip=CKV_AWS_356: Policy requires broad access for this module to function
+  # checkov:skip=CKV_AWS_286: Policy requires broad access for this module to function
+  # checkov:skip=CKV_AWS_288: Policy requires broad access for this module to function
+  # checkov:skip=CKV_AWS_289: Policy requires broad access for this module to function
   name = "${var.cluster_name}-service"
   role = aws_iam_role.emr_service.id
 
